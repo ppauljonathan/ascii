@@ -1,0 +1,14 @@
+{
+  "name": "ascii",
+  "version": "1.0.0",
+  "description": "image to ascii converter",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "author": "P Paul Jonathan",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
