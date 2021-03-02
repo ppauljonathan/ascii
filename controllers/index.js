@@ -1,0 +1,1 @@
+module.exports.getIndex=(req,res,next)=>{res.send('index.html');}
