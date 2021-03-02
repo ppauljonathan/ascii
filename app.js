@@ -10,7 +10,7 @@ app.get('/',(req,res,next)=>{
     next();
 });
 
-app.post('/output',(req,res,next)=>{console.log("works");})
+app.post('/output',(req,res,next)=>{console.log("works");res.redirect('/');})
 
 app.use((req,res,next)=>{res.send("PAGE NOT FOUND");})
 
