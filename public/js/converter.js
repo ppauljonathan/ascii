@@ -1,6 +1,5 @@
 let src;
 let pathname;
-
 function assign(source){
     src=source.toString();
     console.log(src);
@@ -8,7 +7,10 @@ function assign(source){
 }
 
 function conversion(){
-    const p=document.querySelector("output");
+    const p=document.querySelector(".output");
+    let canv,c;
+    let grey,str='';
+    const t=4;
     const img=new Image;
     img.src='cache/'+src;
     img.onload=function(){
@@ -17,10 +19,9 @@ function conversion(){
         document.body.appendChild(canv);
         c=canv.getContext("2d");
         c.drawImage(img,0,0);
-    }
-    d=c.getImageData(0,0,canv.width,canv.height);
-
-    for(i=0;i<d.data.length;i++)
+        const d=c.getImageData(0,0,canv.width,canv.height);
+        console.log(d);
+        for(i=0;i<d.data.length;i++)
         {
             if(i%4==0)
             {
@@ -34,8 +35,8 @@ function conversion(){
             }
             if((i/4)%canv.width==canv.width-1){str+='\n';}
         }
+        p.style.fontSize=`${75/canv.width}vw`;
         c.clearRect(0,0,canv.width,canv.height);
-        change=1;
-        // c.putImageData(d,0,0);
-        p.innerText=str;
+        p.innerHTML=str;
+    }
 }
