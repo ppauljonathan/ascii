@@ -7,7 +7,7 @@ const multer=require('multer');
 
 const fileStorage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,'./cache');
+        cb(null,'./public/cache');
     },
     filename:(req,file,cb)=>{
         cb(null,Date.now().toString()+'-'+file.originalname);
@@ -27,7 +27,7 @@ const routes=require('./routes');
 app.set('view engine','ejs');
 app.set('views','views');
 app.use(multer({storage:fileStorage,fileFilter:fileFilter}).single('input'));
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use(routes);
 

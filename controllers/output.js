@@ -6,6 +6,9 @@ module.exports.getOutput=(req,res,next)=>{res.redirect('/');}
 
 module.exports.postOutput=(req,res,next)=>{
     const pathName=path.join(__dirname,'../','cache',req.file.filename);
-    res.render('output',{title:'OUTPUT'});
+    res.render('output',{
+        title:'OUTPUT',
+        src:req.file.filename
+    });
     fs.unlink(pathName,()=>{console.log("converted");})
 }
