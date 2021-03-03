@@ -1,13 +1,16 @@
 const express=require('express');
 
-const {getIndex}=require('./controllers/index');
-const {postOutput}=require('./controllers/output');
+const {getMain}=require('./controllers/main');
+const output=require('./controllers/output');
 
 const router=express.Router();
 
-router.get('/',getIndex);
+router.get('/output',output.getOutput);
+router.post('/output',output.postOutput)    
 
-router.post('/output',postOutput)
+router.get('/',getMain);
+
+
 
 router.use((req,res,next)=>{res.send("PAGE NOT FOUND");})
 

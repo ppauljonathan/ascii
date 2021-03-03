@@ -1,0 +1,1 @@
+module.exports.getMain=(req,res,next)=>{return res.render('main',{title:'IMAGE TO ASCII'});}

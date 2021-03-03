@@ -18,16 +18,16 @@ const fileFilter=(req,file,cb)=>{
         file.mimetype==='image/png'||
         file.mimetype==='image/jpg'||
         file.mimetype==='image/jpeg'
-    ){console.log(true);
-    cb(null,true)}
+    ){cb(null,true);}
     else{cb(null,false);}
 };
 
 const routes=require('./routes');
 
+app.set('view engine','ejs');
+app.set('views','views');
 app.use(multer({storage:fileStorage,fileFilter:fileFilter}).single('input'));
-app.use(express.static('views'));
-app.use(express.static('public'));
+app.use(express.static('public'))
 
 app.use(routes);
 
