@@ -9,10 +9,14 @@ Convert any image to ASCII Characters
 ```bash
 npm install
 ```
-- create a directory named 'cache' in the 'public' directory
+- run
+```bash
+mkdir public/cache
+```
 - run
 ```bash
 npm start
 ```
-- on the browser run localhost:8080
-
+- run
+```bash
+start msegde http://localhost:8080
