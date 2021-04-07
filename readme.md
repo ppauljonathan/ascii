@@ -6,11 +6,13 @@ Convert any image to ASCII Characters
 - Clone this repository on your machine
 - navigate to the repository
 - run 
-'''bash
+```bash
 npm install
+```
 - create a directory named 'cache' in the 'public' directory
 - run
-'''bash
+```bash
 npm start
+```
 - on the browser run localhost:8080
 
